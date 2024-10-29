@@ -1,0 +1,22 @@
+test_name: "Basic Test"
+version: "1.0"
+description: "Basic test configuration"
+
+devices:
+  sample_device:
+  type: "SAMPLE"
+  connection:
+  port: "COM1"
+  baudrate: 9600
+
+test_sequence:
+  - step: "Initialize"
+    device: "sample_device"
+    timeout: 5000 #ms
+
+  - step: "measure"
+    samples: 10
+    interval: 100 #ms
+    limits: 
+      min: 0
+      max: 100
